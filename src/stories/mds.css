@@ -1,0 +1,27 @@
+body {
+  font-size: 16px;
+}
+
+button,
+.mds-button {
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  transition: all 0.3s;
+}
+.mds-button:hover {
+  background: white;
+  color: black;
+}
+
+.mds-button--outline {
+  background: transparent;
+  color: black;
+}
+.mds-button--outline:hover {
+  background: black;
+  color: white;
+}

@@ -1,0 +1,37 @@
+{# 
+Template for a button, has 4 properties:
+ - defaultClass: required, sets the foundational presentation.
+ - modifiers: used to modify and provide variants.
+ - icon: an icon to render right before the label.
+ - label: required, the main text of the button.
+#}
+
+{# Provide the defaultClass value. #}
+{#
+  set defaultClass = [
+    'mds-button',
+  ]
+#}
+
+{%
+  set allClasses = defaultClass
+%}
+
+{# If modifiers set allClasses to be a merge of default and extra. #}
+{% if modifiers.length > 0 %}
+  {%
+    set allClasses = defaultClass|merge(modifiers)
+  %}
+  {%
+    set allClasses = allClasses | join(" ")
+  %}
+{% endif %}
+
+<button class="{{allClasses}}">
+  {% if icon %}
+    Todo: render an icon here!
+  {% endif %}
+  {% if label %}
+    {{ label | escape }}
+  {% endif %}
+</button>
